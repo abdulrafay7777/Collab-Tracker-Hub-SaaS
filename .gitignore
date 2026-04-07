@@ -1,3 +1,20 @@
+# Dependencies
+# This covers node_modules in root, /Frontend, and /server
+node_modules/
+
+# Environment Variables (CRITICAL)
+# This will catch /server/.env and any other .env files
+.env
+.env.local
+.env.*
+*.local
+
+# Production Builds
+dist/
+dist-ssr/
+build/
+out/
+
 # Logs
 logs
 *.log
@@ -5,20 +22,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
+# Editor & System Files
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
-*.ntvs*
-*.njsproj
-*.sln
 *.sw?
+
+# MERN/Vite Specific
+.eslintcache
+.cache/
