@@ -1,2 +1,1 @@
-# Collab-Tracker-Hub-SaaS
-Collab Tracker Hub is a desktop SaaS workforce system for IT firms[cite: 1]. It enforces a hierarchical workflow from CEO to Employee via role-based dashboards[cite: 1]. Features include real-time tracking, auto attendance, and task management[cite: 1]. Its multi-tenant architecture ensures data isolation, fair evaluation, and scale.
+Collab Tracker Hub is a desktop SaaS workforce system for IT firms. It enforces a hierarchical workflow from CEO to Employee via role-based dashboards. Features include real-time tracking, auto attendance, and task management. Its multi-tenant architecture ensures data isolation, fair evaluation, and scale.
