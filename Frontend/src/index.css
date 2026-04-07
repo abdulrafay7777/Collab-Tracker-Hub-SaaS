@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-collab-main {
+    /* Exact gradient extracted from your Figma screenshot */
+    background: radial-gradient(circle at 10% 10%, #26124b 0%, #150a2e 40%, #0a0514 100%);
+  }
+
+  .bg-collab-stars {
+    /* Crisp, scattered stars matching the design */
+    background-image: 
+      radial-gradient(1px 1px at 15% 20%, rgba(255, 255, 255, 0.4) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 35% 45%, rgba(255, 255, 255, 0.3) 100%, transparent),
+      radial-gradient(1px 1px at 55% 15%, rgba(255, 255, 255, 0.5) 100%, transparent),
+      radial-gradient(2px 2px at 75% 65%, rgba(255, 255, 255, 0.2) 100%, transparent),
+      radial-gradient(1px 1px at 85% 30%, rgba(255, 255, 255, 0.4) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 20% 80%, rgba(255, 255, 255, 0.3) 100%, transparent),
+      radial-gradient(1px 1px at 90% 85%, rgba(255, 255, 255, 0.5) 100%, transparent);
+  }
+}
