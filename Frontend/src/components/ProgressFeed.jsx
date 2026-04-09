@@ -42,7 +42,7 @@ const ProgressFeed = () => {
       </div>
 
       {/* Timeline Wrapper */}
-      <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#2a1b4d] before:via-emerald-500/20 before:to-transparent">
+      <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-[#2a1b4d] before:via-emerald-500/20 before:to-transparent">
         
         {updates.length > 0 ? updates.map((update, index) => (
           <div key={update._id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12">

@@ -146,7 +146,7 @@ const Workspace = () => {
         </div>
 
         {/* Progress Log Section */}
-        <div className="bg-[#11081f] border border-[#2a1b4d] rounded-2xl p-6 shadow-xl flex flex-col min-h-[400px]">
+        <div className="bg-[#11081f] border border-[#2a1b4d] rounded-2xl p-6 shadow-xl flex flex-col min-h-96">
           <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Recent Activity</h3>
           <div className="space-y-5 flex-1 overflow-y-auto mb-6 pr-2 custom-scrollbar">
             {progressLogs && progressLogs.length > 0 ? (
