@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FiClock, FiCalendar, FiCheckCircle } from 'react-icons/fi';
+import { Clock, Calendar, CheckCircle2 } from 'lucide-react';
 
 const WorkSessions = () => {
   const [sessions, setSessions] = useState([]);
@@ -35,7 +35,7 @@ const WorkSessions = () => {
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-white">Work Sessions History</h2>
         <div className="px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 text-sm flex items-center gap-2">
-          <FiCheckCircle /> All sessions synced
+          <CheckCircle2 /> All sessions synced
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const WorkSessions = () => {
                 <td className="p-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                      <FiClock className="w-4 h-4" />
+                      <Clock className="w-4 h-4" />
                     </div>
                     <span className="text-gray-200 font-medium">{log.title}</span>
                   </div>

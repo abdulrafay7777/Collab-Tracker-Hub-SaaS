@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { FiX, FiAlertTriangle } from 'react-icons/fi';
+import { X, AlertTriangle } from 'lucide-react';
 
 const FlagModal = ({ isOpen, onClose, tasks, onSubmitSuccess }) => {
   const [taskId, setTaskId] = useState(tasks?.[0]?._id || '');
@@ -34,10 +34,10 @@ const FlagModal = ({ isOpen, onClose, tasks, onSubmitSuccess }) => {
         
         <div className="flex items-center justify-between p-5 border-b border-[#2a1b4d] bg-[#190e2d]">
           <div className="flex items-center gap-2 text-red-400">
-            <FiAlertTriangle className="w-5 h-5" />
+            <AlertTriangle className="w-5 h-5" />
             <h2 className="text-lg font-semibold text-white">Flag a Delay / Blocker</h2>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors"><FiX className="w-5 h-5" /></button>
+          <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors"><X className="w-5 h-5" /></button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-5">

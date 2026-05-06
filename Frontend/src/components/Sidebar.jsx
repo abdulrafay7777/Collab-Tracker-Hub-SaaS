@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiCheckSquare, FiClock, FiActivity, FiAlertCircle } from 'react-icons/fi';
+import { CheckSquare2, Clock, Activity, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 // Ensure the name here is onNavigateTab
@@ -11,10 +11,10 @@ const Sidebar = ({ activeTab, onNavigateTab }) => {
   console.log("2. SIDEBAR received function:", typeof onNavigateTab);
 
   const navItems = [
-    { name: 'My Tasks', icon: <FiCheckSquare className="w-4 h-4 mr-3" /> },
-    { name: 'Work Sessions', icon: <FiClock className="w-4 h-4 mr-3" /> },
-    { name: 'Progress Updates', icon: <FiActivity className="w-4 h-4 mr-3" /> },
-    { name: 'Flag Delay', icon: <FiAlertCircle className="w-4 h-4 mr-3" /> },
+    { name: 'My Tasks', icon: <CheckSquare2 className="w-4 h-4 mr-3" /> },
+    { name: 'Work Sessions', icon: <Clock className="w-4 h-4 mr-3" /> },
+    { name: 'Progress Updates', icon: <Activity className="w-4 h-4 mr-3" /> },
+    { name: 'Flag Delay', icon: <AlertCircle className="w-4 h-4 mr-3" /> },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiPlay, FiSquare } from 'react-icons/fi';
+import { Play, Square } from 'lucide-react';
 
 const SessionBanner = ({ isTracking, secondsElapsed, onToggle, isToggling }) => {
   // Formats the raw seconds passed down from Workspace into 00:00:00
@@ -21,7 +21,7 @@ const SessionBanner = ({ isTracking, secondsElapsed, onToggle, isToggling }) => 
           </span>
           {/* Task Title from Figma */}
           <span className="text-lg font-medium text-white tracking-wide">
-            Fix login redirect bug — Sprint 4
+            Fix login redirect bug Sprint 4
           </span>
         </div>
         <div className="text-sm text-gray-400 mt-1">
@@ -45,7 +45,7 @@ const SessionBanner = ({ isTracking, secondsElapsed, onToggle, isToggling }) => 
             : 'bg-emerald-400 hover:bg-emerald-500 text-black shadow-[0_0_15px_rgba(52,211,153,0.2)]'
         }`}
       >
-        {isTracking ? <FiSquare className="w-4 h-4 fill-current" /> : <FiPlay className="w-4 h-4 fill-current" />}
+        {isTracking ? <Square className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current" />}
         {isTracking ? 'Stop Session' : 'Start Session'}
       </button>
     </div>

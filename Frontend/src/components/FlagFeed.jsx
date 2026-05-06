@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FiAlertTriangle, FiClock, FiUser, FiArrowRight } from 'react-icons/fi';
+import { AlertTriangle, Clock, User, ArrowRight } from 'lucide-react';
 
 const FlagFeed = () => {
   const [flags, setFlags] = useState([]);
@@ -43,12 +43,12 @@ const FlagFeed = () => {
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
-                  <FiAlertTriangle className="w-6 h-6" />
+                  <AlertTriangle className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">{flag.reasonCategory}</h3>
                   <p className="text-xs text-gray-400 flex items-center gap-1">
-                    <FiUser className="inline" /> Assigned to you
+                    <User className="inline" /> Assigned to you
                   </p>
                 </div>
               </div>
@@ -65,11 +65,11 @@ const FlagFeed = () => {
 
             <div className="flex items-center justify-between pt-4 border-t border-white/5">
               <div className="text-xs text-gray-500 flex items-center gap-2">
-                <FiClock /> Raised {new Date(flag.createdAt).toLocaleDateString()}
+                <Clock /> Raised {new Date(flag.createdAt).toLocaleDateString()}
               </div>
               {flag.proposedNewETA && (
                 <div className="text-xs font-medium text-emerald-400 flex items-center gap-1">
-                  New ETA: {new Date(flag.proposedNewETA).toLocaleDateString()} <FiArrowRight />
+                  New ETA: {new Date(flag.proposedNewETA).toLocaleDateString()} <ArrowRight />
                 </div>
               )}
             </div>
@@ -77,7 +77,7 @@ const FlagFeed = () => {
         )) : (
           <div className="bg-[#11081f]/30 border border-[#2a1b4d] rounded-xl p-20 text-center">
             <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-500 mx-auto mb-4">
-              <FiAlertTriangle className="w-8 h-8" />
+              <AlertTriangle className="w-8 h-8" />
             </div>
             <h3 className="text-white font-medium">Clear Skies!</h3>
             <p className="text-gray-500 text-sm">No active blockers or delays reported.</p>

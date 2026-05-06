@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+const { Schema, model } = require('mongoose');
 
 const progressUpdateSchema = new Schema({
   userId: {
@@ -23,5 +23,5 @@ const progressUpdateSchema = new Schema({
     required: true
   }
 }, { timestamps: true });
-
-export default model('ProgressUpdate', progressUpdateSchema);
+ 
+module.exports = model('ProgressUpdate', progressUpdateSchema);

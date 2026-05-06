@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { FiX } from 'react-icons/fi';
+import { X } from 'lucide-react';
 
 const ProgressModal = ({ isOpen, onClose, activeTask, onUpdateSuccess }) => {
   const [content, setContent] = useState('');
@@ -38,7 +38,7 @@ const ProgressModal = ({ isOpen, onClose, activeTask, onUpdateSuccess }) => {
         <div className="flex items-center justify-between p-5 border-b border-[#2a1b4d] bg-[#190e2d]">
           <h2 className="text-lg font-semibold text-white">Add Progress Update</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
-            <FiX className="w-5 h-5" />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
