@@ -159,7 +159,7 @@ const SystemPerformance = () => {
                 <div>
                   <h3 className="text-sm font-semibold text-white">{server.name}</h3>
                   <p className={`text-xs mt-1 ${getStatusColor(server.status)}`}>
-                    {server.status.toUpperCase()} • Uptime: {server.uptime}
+                    {server.status.toUpperCase()}   Uptime: {server.uptime}
                   </p>
                 </div>
                 <div className={`px-3 py-1 rounded-full border text-xs font-semibold ${getStatusBgColor(server.status)} ${getStatusColor(server.status)}`}>

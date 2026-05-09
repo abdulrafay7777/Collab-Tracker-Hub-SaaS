@@ -145,14 +145,14 @@ const SeniorDashboard = () => {
           <div className="border border-blue-400/30 bg-blue-600/20 rounded-lg p-3 flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-white">feat: Add dark mode support</p>
-              <p className="text-xs text-gray-400">by John Developer • 2 hours ago</p>
+              <p className="text-xs text-gray-400">by John Developer   2 hours ago</p>
             </div>
             <span className="text-xs bg-blue-600 px-2 py-1 rounded">Ready</span>
           </div>
           <div className="border border-green-400/30 bg-green-600/20 rounded-lg p-3 flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-white">refactor: Optimize database queries</p>
-              <p className="text-xs text-gray-400">by Alice Designer • 4 hours ago</p>
+              <p className="text-xs text-gray-400">by Alice Designer   4 hours ago</p>
             </div>
             <span className="text-xs bg-green-600 px-2 py-1 rounded">In Review</span>
           </div>

@@ -137,7 +137,7 @@ const EmployeeWorkSessions = () => {
                 <div>
                   <p className="text-white font-medium">{session.task}</p>
                   <p className="text-xs text-gray-500 mt-1">
-                    {session.date} • {session.startTime} - {session.endTime}
+                    {session.date} {session.startTime} - {session.endTime}
                   </p>
                 </div>
                 <div className="text-right">

@@ -116,7 +116,7 @@ const ManagerDashboard = () => {
                     style={{ width: `${project.progress}%` }}
                   />
                 </div>
-                <p className="text-xs text-gray-400">{project.progress}% • Due {project.deadline}</p>
+                <p className="text-xs text-gray-400">{project.progress}%   Due {project.deadline}</p>
               </div>
             ))}
           </div>

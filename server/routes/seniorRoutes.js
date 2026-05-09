@@ -4,10 +4,8 @@ const Task = require('../models/Task');
 const Justification = require('../models/Justification');
 const authMiddleware = require('../middleware/authMiddleware');
 
-// Apply authentication middleware to all senior routes
 router.use(authMiddleware);
 
-// 1. View tasks assigned to this Senior by Managers [cite: 80]
 router.get('/manager-tasks', async (req, res) => {
   try {
     const tasks = await Task.find({ assignedTo: req.user._id })
@@ -18,7 +16,6 @@ router.get('/manager-tasks', async (req, res) => {
   }
 });
 
-// 2. Distribute/Assign tasks to Employees [cite: 48, 80]
 router.post('/assign-task', async (req, res) => {
   try {
     const { title, description, employeeId, parentTaskId, deadline, priority } = req.body;
@@ -51,7 +48,7 @@ router.get('/justifications', async (req, res) => {
   }
 });
 
-// 4. Approve or reject delay justifications [cite: 49, 81]
+// 4. Approve or reject delay justifications
 router.put('/justification/:id/review', async (req, res) => {
   try {
     const { status } = req.body; // 'Approved' or 'Rejected'
