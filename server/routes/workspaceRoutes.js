@@ -24,6 +24,10 @@
 const express = require('express');
 const router = express.Router();
 const workspaceController = require('../controllers/workspaceController');
+const authMiddleware = require('../middleware/authMiddleware');
+
+// Apply authentication to all routes
+router.use(authMiddleware);
 
 // This makes the URL: http://localhost:5000/api/v1/workspace/dashboard
 router.get('/dashboard', workspaceController.getDashboardData);

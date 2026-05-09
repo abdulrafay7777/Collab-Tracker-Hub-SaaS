@@ -6,7 +6,7 @@ const FlagDelay = require('../models/FlagDelay.js');
 
 exports.getDashboardData = async (req, res, next) => {
   try {
-    const userId = '65fa1c2b8a4f2c001f3e4a99'; 
+    const userId = req.user.id; 
     
     // 1. Timezone Fix: Accept client's local midnight, fallback to server midnight
     const startOfDay = req.query.startOfDay ? new Date(req.query.startOfDay) : new Date();
@@ -43,7 +43,7 @@ exports.getDashboardData = async (req, res, next) => {
 
 exports.toggleSession = async (req, res, next) => {
   try {
-    const userId = '65fa1c2b8a4f2c001f3e4a99'; 
+    const userId = req.user.id;
     const { taskId } = req.body;
 
     const activeSession = await Session.findOne({ userId, isActive: true });
@@ -98,7 +98,7 @@ exports.toggleSession = async (req, res, next) => {
 
 exports.submitProgressUpdate = async (req, res, next) => {
   try {
-    const userId = '65fa1c2b8a4f2c001f3e4a99'; // Mock ID for now
+    const userId = req.user.id;
     const { taskId, content, completionPercentage } = req.body;
 
     // 1. Save the new update
@@ -129,7 +129,7 @@ exports.submitProgressUpdate = async (req, res, next) => {
 
 exports.submitFlagDelay = async (req, res, next) => {
   try {
-    const userId = '65fa1c2b8a4f2c001f3e4a99'; // Mock ID for now
+    const userId = req.user.id;
     const { taskId, reasonCategory, severityLevel, explanation, proposedNewETA } = req.body;
 
     // 1. Create the Flag

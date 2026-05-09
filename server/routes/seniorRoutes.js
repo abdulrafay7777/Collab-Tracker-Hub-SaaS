@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/Task');
 const Justification = require('../models/Justification');
-// Assume an authMiddleware exists that verifies JWT and sets req.user
+const authMiddleware = require('../middleware/authMiddleware');
+
+// Apply authentication middleware to all senior routes
+router.use(authMiddleware);
 
 // 1. View tasks assigned to this Senior by Managers [cite: 80]
 router.get('/manager-tasks', async (req, res) => {
