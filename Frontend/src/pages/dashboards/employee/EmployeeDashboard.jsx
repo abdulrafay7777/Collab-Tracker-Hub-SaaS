@@ -69,13 +69,13 @@ const EmployeeDashboard = () => {
         {personalStats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
+            <div key={index} className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-xs text-gray-400">{stat.title}</p>
                   <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
                 </div>
-                <div className={`p-2 rounded-lg bg-gradient-to-br ${stat.color}`}>
+                <div className={`p-2 rounded-lg  bg-linear-to-br ${stat.color}`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -87,7 +87,7 @@ const EmployeeDashboard = () => {
       {/* Tasks and Week Overview */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Today's Tasks */}
-        <div className="lg:col-span-2 bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className="lg:col-span-2  bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">Today's Tasks</h2>
           <div className="space-y-2">
             {todaysTasks.map((task) => (
@@ -111,7 +111,7 @@ const EmployeeDashboard = () => {
         </div>
 
         {/* Week Overview */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">This Week</h2>
           <div className="space-y-3">
             {weekProgress.map((day, index) => (
@@ -134,7 +134,7 @@ const EmployeeDashboard = () => {
       </div>
 
       {/* Quick Tips */}
-      <div className="bg-gradient-to-br from-cyan-600/20 to-cyan-400/10 border border-cyan-400/30 rounded-lg p-4">
+      <div className=" bg-linear-to-br from-cyan-600/20 to-cyan-400/10 border border-cyan-400/30 rounded-lg p-4">
         <div className="flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-1" />
           <div>

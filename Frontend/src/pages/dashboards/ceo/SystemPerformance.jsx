@@ -127,22 +127,22 @@ const SystemPerformance = () => {
 
       {/* Overall System Health */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-gradient-to-br from-green-600/20 to-green-400/10 border border-green-400/30 rounded-lg p-4">
+        <div className="bg-linear-to-br from-green-600/20 to-green-400/10 border border-green-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-2">System Status</p>
           <p className="text-2xl font-bold text-green-400">Operational</p>
           <p className="text-xs text-green-400/70 mt-2">All systems healthy</p>
         </div>
-        <div className="bg-gradient-to-br from-blue-600/20 to-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+        <div className="bg-linear-to-br from-blue-600/20 to-blue-400/10 border border-blue-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-2">Uptime</p>
           <p className="text-2xl font-bold text-blue-400">99.95%</p>
           <p className="text-xs text-blue-400/70 mt-2">30 days</p>
         </div>
-        <div className="bg-gradient-to-br from-purple-600/20 to-purple-400/10 border border-purple-400/30 rounded-lg p-4">
+        <div className="bg-linear-to-br from-purple-600/20 to-purple-400/10 border border-purple-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-2">Response Time</p>
           <p className="text-2xl font-bold text-purple-400">89ms</p>
           <p className="text-xs text-purple-400/70 mt-2">↓ 12% improvement</p>
         </div>
-        <div className="bg-gradient-to-br from-orange-600/20 to-orange-400/10 border border-orange-400/30 rounded-lg p-4">
+        <div className="bg-linear-to-br from-orange-600/20 to-orange-400/10 border border-orange-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-2">Active Alerts</p>
           <p className="text-2xl font-bold text-orange-400">1</p>
           <p className="text-xs text-orange-400/70 mt-2">1 warning</p>
@@ -150,7 +150,7 @@ const SystemPerformance = () => {
       </div>
 
       {/* Server Status */}
-      <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+      <div className="bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
         <h2 className="text-lg font-bold text-white mb-4">Server Status</h2>
         <div className="space-y-4">
           {servers.map((server, index) => (
@@ -217,7 +217,7 @@ const SystemPerformance = () => {
 
       {/* Network Metrics */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className="bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
             <Wifi className="w-5 h-5 text-cyan-400" />
             Network Performance
@@ -244,7 +244,7 @@ const SystemPerformance = () => {
         </div>
 
         {/* System Alerts */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className="bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
             <AlertTriangle className="w-5 h-5 text-yellow-400" />
             System Alerts

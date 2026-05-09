@@ -174,17 +174,17 @@ const LiveActivity = () => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-gradient-to-br from-blue-600/20 to-blue-400/10 border border-blue-400/30 rounded-lg p-4">
+        <div className=" bg-linear-to-br from-blue-600/20 to-blue-400/10 border border-blue-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-1">Active Users</p>
           <p className="text-2xl font-bold text-blue-400">42</p>
           <p className="text-xs text-gray-500 mt-2">Currently online</p>
         </div>
-        <div className="bg-gradient-to-br from-green-600/20 to-green-400/10 border border-green-400/30 rounded-lg p-4">
+        <div className=" bg-linear-to-br from-green-600/20 to-green-400/10 border border-green-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-1">Tasks Today</p>
           <p className="text-2xl font-bold text-green-400">128</p>
           <p className="text-xs text-gray-500 mt-2">Completed</p>
         </div>
-        <div className="bg-gradient-to-br from-purple-600/20 to-purple-400/10 border border-purple-400/30 rounded-lg p-4">
+        <div className=" bg-linear-to-br from-purple-600/20 to-purple-400/10 border border-purple-400/30 rounded-lg p-4">
           <p className="text-sm text-gray-400 mb-1">Events</p>
           <p className="text-2xl font-bold text-purple-400">342</p>
           <p className="text-xs text-gray-500 mt-2">Today</p>

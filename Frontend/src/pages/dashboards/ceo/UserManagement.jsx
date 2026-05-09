@@ -198,7 +198,7 @@ const UserManagement = () => {
       </div>
 
       {/* Users Table */}
-      <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg overflow-hidden">
+      <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>

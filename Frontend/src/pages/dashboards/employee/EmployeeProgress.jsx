@@ -72,7 +72,7 @@ const EmployeeProgress = () => {
             </div>
             <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
               <div 
-                className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-full transition-all duration-500"
+                className="bg-linear-to-r from-emerald-500 to-emerald-400 h-full transition-all duration-500"
                 style={{ width: `${goal.progress}%` }}
               />
             </div>
@@ -123,7 +123,7 @@ const EmployeeProgress = () => {
                   </span>
                 </div>
               </div>
-              <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0 mt-1" />
             </div>
           </div>
         ))}

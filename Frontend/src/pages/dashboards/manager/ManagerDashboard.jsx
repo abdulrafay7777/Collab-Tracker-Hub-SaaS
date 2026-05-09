@@ -57,13 +57,13 @@ const ManagerDashboard = () => {
         {teamStats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
+            <div key={index} className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-xs text-gray-400">{stat.title}</p>
                   <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
                 </div>
-                <div className={`p-2 rounded-lg bg-gradient-to-br ${stat.color}`}>
+                <div className={`p-2 rounded-lg  bg-linear-to-br ${stat.color}`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -75,7 +75,7 @@ const ManagerDashboard = () => {
       {/* Team & Projects */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Team Members */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">Team Members</h2>
           <div className="space-y-3">
             {teamMembers.map((member, index) => (
@@ -97,7 +97,7 @@ const ManagerDashboard = () => {
         </div>
 
         {/* Projects */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">Active Projects</h2>
           <div className="space-y-4">
             {projects.map((project, index) => (
@@ -124,9 +124,9 @@ const ManagerDashboard = () => {
       </div>
 
       {/* Alerts */}
-      <div className="bg-gradient-to-br from-yellow-600/20 to-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
+      <div className=" bg-linear-to-br from-yellow-600/20 to-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
         <div className="flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-1" />
+          <AlertCircle className="w-5 h-5 text-yellow-400 shrink-0 mt-1" />
           <div>
             <p className="text-sm font-semibold text-yellow-400">Attention Required</p>
             <p className="text-sm text-gray-300 mt-1">Carol DevOps is away and has 2 pending tasks. Consider reassigning work.</p>

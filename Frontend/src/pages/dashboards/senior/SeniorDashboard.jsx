@@ -57,13 +57,13 @@ const SeniorDashboard = () => {
         {projectStats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
+            <div key={index} className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-xs text-gray-400">{stat.title}</p>
                   <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
                 </div>
-                <div className={`p-2 rounded-lg bg-gradient-to-br ${stat.color}`}>
+                <div className={`p-2 rounded-lg  bg-linear-to-br ${stat.color}`}>
                   <Icon className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -75,7 +75,7 @@ const SeniorDashboard = () => {
       {/* Sprints and Metrics */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Active Sprints */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">Active Sprints</h2>
           <div className="space-y-4">
             {sprints.map((sprint, index) => (
@@ -110,7 +110,7 @@ const SeniorDashboard = () => {
         </div>
 
         {/* Technical Metrics */}
-        <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+        <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
           <h2 className="text-lg font-bold text-white mb-4">Technical Quality</h2>
           <div className="space-y-4">
             {technicalMetrics.map((metric, index) => (
@@ -139,7 +139,7 @@ const SeniorDashboard = () => {
       </div>
 
       {/* Code Review Queue */}
-      <div className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
+      <div className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-6">
         <h2 className="text-lg font-bold text-white mb-4">Pull Requests Awaiting Review</h2>
         <div className="space-y-2">
           <div className="border border-blue-400/30 bg-blue-600/20 rounded-lg p-3 flex items-center justify-between">
