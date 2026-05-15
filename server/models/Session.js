@@ -29,5 +29,4 @@ const sessionSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-// This is the magic line that makes .findOne() work in the controller
-module.exports = mongoose.model('Session', sessionSchema);
+module.exports = mongoose.models.Session || mongoose.model('Session', sessionSchema);

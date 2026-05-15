@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
 const progressUpdateSchema = new Schema({
   userId: {
@@ -24,4 +25,4 @@ const progressUpdateSchema = new Schema({
   }
 }, { timestamps: true });
  
-module.exports = model('ProgressUpdate', progressUpdateSchema);
+module.exports = mongoose.models.ProgressUpdate || model('ProgressUpdate', progressUpdateSchema);

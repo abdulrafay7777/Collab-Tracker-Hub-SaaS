@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Edit, Trash2, Search, Filter } from 'lucide-react';
+import { useToast } from '../../../context/ToastContext';
 
 /**
  * User Management Page (CEO Only)
@@ -20,6 +21,7 @@ import { Plus, Edit, Trash2, Search, Filter } from 'lucide-react';
  */
 
 const UserManagement = () => {
+  const { showSuccess, showError, showWarning } = useToast();
   // Mock user data
   const [users, setUsers] = useState([
     {
@@ -116,6 +118,7 @@ const UserManagement = () => {
           ? { ...user, ...formData }
           : user
       ));
+      showSuccess('User updated successfully');
     } else {
       // Create new user
       const newUser = {
@@ -125,15 +128,15 @@ const UserManagement = () => {
         joinDate: new Date().toISOString().split('T')[0]
       };
       setUsers([...users, newUser]);
+      showSuccess('User created successfully');
     }
     setIsModalOpen(false);
   };
 
   // Delete user
   const handleDeleteUser = (id) => {
-    if (window.confirm('Are you sure you want to delete this user?')) {
-      setUsers(users.filter(user => user.id !== id));
-    }
+    setUsers(users.filter(user => user.id !== id));
+    showSuccess('User deleted successfully');
   };
 
   const getRoleColor = (role) => {
@@ -188,11 +191,11 @@ const UserManagement = () => {
             onChange={(e) => setFilterRole(e.target.value)}
             className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
           >
-            <option value="all">All Roles</option>
-            <option value="CEO">CEO</option>
-            <option value="Manager">Manager</option>
-            <option value="Senior">Senior</option>
-            <option value="Employee">Employee</option>
+            <option value="all" style={{ backgroundColor: '#190e2d', color: 'white' }}>All Roles</option>
+            <option value="CEO" style={{ backgroundColor: '#190e2d', color: 'white' }}>CEO</option>
+            <option value="Manager" style={{ backgroundColor: '#190e2d', color: 'white' }}>Manager</option>
+            <option value="Senior" style={{ backgroundColor: '#190e2d', color: 'white' }}>Senior</option>
+            <option value="Employee" style={{ backgroundColor: '#190e2d', color: 'white' }}>Employee</option>
           </select>
         </div>
       </div>
@@ -297,10 +300,10 @@ const UserManagement = () => {
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                   className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
                 >
-                  <option value="CEO">CEO</option>
-                  <option value="Manager">Manager</option>
-                  <option value="Senior">Senior</option>
-                  <option value="Employee">Employee</option>
+                  <option value="CEO" style={{ backgroundColor: '#190e2d', color: 'white' }}>CEO</option>
+                  <option value="Manager" style={{ backgroundColor: '#190e2d', color: 'white' }}>Manager</option>
+                  <option value="Senior" style={{ backgroundColor: '#190e2d', color: 'white' }}>Senior</option>
+                  <option value="Employee" style={{ backgroundColor: '#190e2d', color: 'white' }}>Employee</option>
                 </select>
               </div>
 

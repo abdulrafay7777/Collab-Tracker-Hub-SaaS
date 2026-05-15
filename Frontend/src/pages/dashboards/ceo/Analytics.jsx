@@ -82,7 +82,7 @@ const Analytics = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {analyticsData.map((item, index) => {
           const Icon = item.icon;
-          const TrendIcon = item.trend === 'up' ? FiArrowUp : FiArrowDown;
+          const TrendIcon = item.trend === 'up' ? ArrowUp : ArrowDown;
           return (
             <div key={index} className=" bg-linear-to-br from-white/5 to-white/0 border border-white/10 rounded-lg p-4">
               <div className="flex items-start justify-between mb-3">
@@ -95,7 +95,7 @@ const Analytics = () => {
                 </div>
               </div>
               <div className="flex items-center gap-1">
-                <TrendIcon className={item.trend === 'up' ? 'text-green-400' : 'text-red-400'} />
+                <TrendIcon className={`w-4 h-4 ${item.trend === 'up' ? 'text-green-400' : 'text-red-400'}`} />
                 <span className={item.trend === 'up' ? 'text-green-400' : 'text-red-400'}>
                   {item.change}
                 </span>
@@ -120,7 +120,7 @@ const Analytics = () => {
                 </div>
                 <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full"
+                    className="bg-linear-to-r from-emerald-600 to-emerald-400 h-full rounded-full"
                     style={{ width: `${item.value}%` }}
                   />
                 </div>
@@ -144,7 +144,7 @@ const Analytics = () => {
                 </div>
                 <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-blue-600 to-blue-400 h-full rounded-full"
+                    className="bg-linear-to-r from-blue-600 to-blue-400 h-full rounded-full"
                     style={{ width: `${dept.efficiency}%` }}
                   />
                 </div>

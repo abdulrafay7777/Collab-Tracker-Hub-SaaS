@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useToast } from '../context/ToastContext';
 
 const SeniorDashboard = () => {
+  const { showSuccess, showError } = useToast();
   const [managerTasks, setManagerTasks] = useState([]);
   const [justifications, setJustifications] = useState([]);
   const [employees, setEmployees] = useState([]); // Assume fetched from an org chart endpoint
@@ -27,9 +29,10 @@ const SeniorDashboard = () => {
     e.preventDefault();
     try {
       await axios.post('/api/senior/assign-task', newTask);
-      alert('Task successfully assigned to employee!');
+      showSuccess('Task successfully assigned to employee!');
       setNewTask({ title: '', employeeId: '', parentTaskId: '' });
     } catch (error) {
+      showError('Error assigning task');
       console.error('Error assigning task');
     }
   };

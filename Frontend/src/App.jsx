@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
 import ProtectedRoute from './components/ProtectedRoute';
+import { ToastProvider } from './context/ToastContext';
+import Toast from './components/Toast';
 
 // CEO Dashboard pages
 import CEODashboard from './pages/dashboards/ceo/CEODashboard';
@@ -12,6 +14,10 @@ import SystemPerformance from './pages/dashboards/ceo/SystemPerformance';
 
 // Manager Dashboard
 import ManagerDashboard from './pages/dashboards/manager/ManagerDashboard';
+import ManagerTeam from './pages/dashboards/manager/ManagerTeam';
+import ManagerPerformance from './pages/dashboards/manager/ManagerPerformance';
+import ManagerTasks from './pages/dashboards/manager/ManagerTasks';
+import ManagerReports from './pages/dashboards/manager/ManagerReports';
 
 // Senior Dashboard
 import SeniorDashboard from './pages/dashboards/senior/SeniorDashboard';
@@ -53,7 +59,9 @@ import EmployeeFlags from './pages/dashboards/employee/EmployeeFlags';
 
 function App() {
   return (
-    <Router>
+    <ToastProvider>
+      <Toast />
+      <Router>
       <Routes>
         {/* Default redirect to employee dashboard */}
         <Route path="/" element={<Navigate to="/dashboards/employee" replace />} />
@@ -125,6 +133,50 @@ function App() {
             element={
               <RootLayout>
                 <ManagerDashboard />
+              </RootLayout>
+            }
+          />
+        } />
+
+        <Route path="/dashboards/manager/team" element={
+          <ProtectedRoute 
+            allowedRoles={['CEO', 'Manager']}
+            element={
+              <RootLayout>
+                <ManagerTeam />
+              </RootLayout>
+            }
+          />
+        } />
+
+        <Route path="/dashboards/manager/performance" element={
+          <ProtectedRoute 
+            allowedRoles={['CEO', 'Manager']}
+            element={
+              <RootLayout>
+                <ManagerPerformance />
+              </RootLayout>
+            }
+          />
+        } />
+
+        <Route path="/dashboards/manager/tasks" element={
+          <ProtectedRoute 
+            allowedRoles={['CEO', 'Manager']}
+            element={
+              <RootLayout>
+                <ManagerTasks />
+              </RootLayout>
+            }
+          />
+        } />
+
+        <Route path="/dashboards/manager/reports" element={
+          <ProtectedRoute 
+            allowedRoles={['CEO', 'Manager']}
+            element={
+              <RootLayout>
+                <ManagerReports />
               </RootLayout>
             }
           />
@@ -212,7 +264,8 @@ function App() {
           </div>
         } />
       </Routes>
-    </Router>
+      </Router>
+    </ToastProvider>
   );
 }
 

@@ -26,4 +26,4 @@ const progressLogSchema = new mongoose.Schema({
 });
 
 // This is the crucial line that makes .find() and .create() work in your controller!
-module.exports = mongoose.model('ProgressLog', progressLogSchema);
+module.exports = mongoose.models.ProgressLog || mongoose.model('ProgressLog', progressLogSchema);

@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
 const flagDelaySchema = new Schema({
   userId: {
@@ -34,4 +35,4 @@ const flagDelaySchema = new Schema({
   }
 }, { timestamps: true });
 
-module.exports = model('FlagDelay', flagDelaySchema);
+module.exports = mongoose.models.FlagDelay || model('FlagDelay', flagDelaySchema);

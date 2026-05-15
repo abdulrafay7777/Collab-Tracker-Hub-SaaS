@@ -24,9 +24,35 @@ const RootLayout = ({ children }) => {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
   const detailsRef = React.useRef(null);
+  const pendingRoleRef = React.useRef(null);
 
-  // Auto-navigate to dashboard when role changes
+  const rolePathMap = {
+    CEO: '/dashboards/ceo',
+    Manager: '/dashboards/manager',
+    Senior: '/dashboards/senior',
+    Employee: '/dashboards/employee'
+  };
+
+  // Navigate when role changes
   React.useEffect(() => {
+    if (pendingRoleRef.current && currentUser?.userRole === pendingRoleRef.current) {
+      const newPath = rolePathMap[currentUser.userRole];
+      if (newPath && location.pathname !== newPath) {
+        navigate(newPath);
+        pendingRoleRef.current = null;
+      }
+    }
+  }, [currentUser?.userRole]);
+
+  // Handle role switch with details closing
+  const handleRoleSwitch = (roleKey) => {
+    const roleMap = {
+      ceo: 'CEO',
+      manager: 'Manager',
+      senior: 'Senior',
+      employee: 'Employee'
+    };
+    
     const rolePathMap = {
       CEO: '/dashboards/ceo',
       Manager: '/dashboards/manager',
@@ -34,15 +60,20 @@ const RootLayout = ({ children }) => {
       Employee: '/dashboards/employee'
     };
     
-    const newPath = rolePathMap[currentUser?.userRole];
-    if (newPath && location.pathname !== newPath && !location.pathname.startsWith(newPath)) {
-      navigate(newPath);
-    }
-  }, [currentUser?.userRole, navigate, location.pathname]);
-
-  // Handle role switch with details closing
-  const handleRoleSwitch = (roleKey) => {
+    const actualRole = roleMap[roleKey];
+    pendingRoleRef.current = actualRole;
+    
     switchRole(roleKey);
+    
+    // Navigate after state updates (using setTimeout to ensure state batching completes)
+    setTimeout(() => {
+      const newPath = rolePathMap[actualRole];
+      if (newPath && location.pathname !== newPath) {
+        navigate(newPath);
+      }
+      pendingRoleRef.current = null;
+    }, 0);
+    
     // Close the details element
     if (detailsRef.current) {
       detailsRef.current.open = false;

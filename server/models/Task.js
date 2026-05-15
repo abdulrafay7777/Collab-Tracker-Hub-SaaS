@@ -86,4 +86,4 @@ const taskSchema = new Schema({
   timestamps: true 
 });
 
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.models.Task || mongoose.model('Task', taskSchema);

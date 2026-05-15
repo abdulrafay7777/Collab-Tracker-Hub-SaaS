@@ -51,14 +51,24 @@ const MOCK_USERS = {
 };
 
 export const AuthProvider = ({ children }) => {
-  // For demo: defaults to employee, can be switched via switchRole
-  const [currentUser, setCurrentUser] = useState(MOCK_USERS.employee);
+  // Initialize from localStorage if available, otherwise default to CEO for demo
+  const getInitialUser = () => {
+    const savedRoleKey = localStorage.getItem('userRoleKey');
+    if (savedRoleKey && MOCK_USERS[savedRoleKey]) {
+      return MOCK_USERS[savedRoleKey];
+    }
+    // Default to CEO for demo purposes
+    return MOCK_USERS.ceo;
+  };
+
+  const [currentUser, setCurrentUser] = useState(getInitialUser());
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   // Switch between different user roles for demo/testing
   const switchRole = (roleKey) => {
     if (MOCK_USERS[roleKey]) {
       setCurrentUser(MOCK_USERS[roleKey]);
+      localStorage.setItem('userRoleKey', roleKey);
       return true;
     }
     return false;
