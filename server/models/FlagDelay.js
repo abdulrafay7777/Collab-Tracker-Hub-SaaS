@@ -3,28 +3,24 @@ const mongoose = require('mongoose');
 
 const flagDelaySchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
+    type: String, // Accept string IDs (for mock/demo) or can be converted from ObjectId
     required: true
   },
   taskId: {
-    type: Schema.Types.ObjectId,
-    ref: 'Task',
-    required: true
+    type: String, // Accept string IDs (for mock/demo)
+    default: null
   },
   reasonCategory: {
-    type: String,
-    enum: ['Technical Blocker', 'Waiting on 3rd Party', 'Scope Creep', 'Personal Emergency', 'Other'],
+    type: String, // Accept any string for flexibility
     required: true
   },
   severityLevel: {
-    type: String,
-    enum: ['Low', 'Medium', 'High/Blocker'],
+    type: String, // Accept any string (high, medium, low)
     required: true
   },
   explanation: {
     type: String,
-    required: true
+    default: ''
   },
   proposedNewETA: {
     type: Date

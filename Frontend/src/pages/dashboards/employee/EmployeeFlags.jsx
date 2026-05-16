@@ -166,12 +166,16 @@ const EmployeeFlags = () => {
                     )}
                   </div>
 
-                  {/* Delete Button (local remove) */}
+                  {/* Delete Button */}
                   <button
-                    onClick={() => {
-                      if (window.confirm('Remove this flag locally?')) {
+                    onClick={async () => {
+                      try {
+                        await axios.delete(`/api/v1/workspace/flag/${flag.id || flag._id}`);
                         setFlags(prev => prev.filter(p => (p.id || p._id) !== (flag.id || flag._id)));
-                        showSuccess('Flag removed locally');
+                        showSuccess('Flag deleted');
+                      } catch (err) {
+                        console.error('Error deleting flag:', err);
+                        showError(err.response?.data?.message || 'Failed to delete flag');
                       }
                     }}
                     className="text-gray-400 hover:text-red-400 transition-colors shrink-0 mt-1"

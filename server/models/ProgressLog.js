@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const progressLogSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    type: String, // Accept string IDs (for mock/demo)
     required: true
   },
   taskId: {

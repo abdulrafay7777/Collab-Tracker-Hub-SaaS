@@ -88,10 +88,10 @@ const EmployeeTasks = () => {
             onChange={(e) => setFilterStatus(e.target.value)}
             className="bg-white/5 border border-white/10 rounded px-3 py-2 text-sm text-white hover:border-white/20 focus:border-emerald-400 focus:outline-none"
           >
-            <option value="all">All Status</option>
-            <option value="completed">Completed</option>
-            <option value="in-progress">In Progress</option>
-            <option value="pending">Pending</option>
+            <option value="all" style={{ backgroundColor: '#190e2d', color: 'white' }}>All Status</option>
+            <option value="completed" style={{ backgroundColor: '#190e2d', color: 'white' }}>Completed</option>
+            <option value="in-progress" style={{ backgroundColor: '#190e2d', color: 'white' }}>In Progress</option>
+            <option value="pending" style={{ backgroundColor: '#190e2d', color: 'white' }}>Pending</option>
           </select>
         </div>
 
@@ -102,10 +102,10 @@ const EmployeeTasks = () => {
             onChange={(e) => setFilterPriority(e.target.value)}
             className="bg-white/5 border border-white/10 rounded px-3 py-2 text-sm text-white hover:border-white/20 focus:border-emerald-400 focus:outline-none"
           >
-            <option value="all">All Priority</option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
+            <option value="all" style={{ backgroundColor: '#190e2d', color: 'white' }}>All Priority</option>
+            <option value="high" style={{ backgroundColor: '#190e2d', color: 'white' }}>High</option>
+            <option value="medium" style={{ backgroundColor: '#190e2d', color: 'white' }}>Medium</option>
+            <option value="low" style={{ backgroundColor: '#190e2d', color: 'white' }}>Low</option>
           </select>
         </div>
 

@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 
 const progressUpdateSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
+    type: String, // Accept string IDs (for mock/demo)
     required: true
   },
   taskId: {

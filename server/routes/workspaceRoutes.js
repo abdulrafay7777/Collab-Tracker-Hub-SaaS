@@ -1,25 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const workspaceController = require('../controllers/workspaceController');
+const dashboardController = require('../controllers/dashboardController');
+const tasksController = require('../controllers/tasksController');
+const teamController = require('../controllers/teamController');
+const sessionsController = require('../controllers/sessionsController');
+const progressController = require('../controllers/progressController');
 const flagsController = require('../controllers/flagsController');
 const authMiddleware = require('../middleware/authMiddleware');
 
 router.use(authMiddleware);
 
-router.get('/dashboard', workspaceController.getDashboardData);
+// Dashboard
+router.get('/dashboard', dashboardController.getDashboardData);
 
-router.get('/tasks', workspaceController.getTasks);
-router.post('/tasks', workspaceController.createTask);
+// Tasks
+router.get('/tasks', tasksController.getTasks);
+router.post('/tasks', tasksController.createTask);
 
-router.get('/team', workspaceController.getTeamMembers);
-router.get('/performance', workspaceController.getTeamPerformance);
-router.get('/reports', workspaceController.getReports);
+// Team
+router.get('/team', teamController.getTeamMembers);
+router.get('/performance', teamController.getTeamPerformance);
+router.get('/reports', teamController.getReports);
 
-router.post('/session/toggle', workspaceController.toggleSession);
+// Sessions
+router.post('/session/toggle', sessionsController.toggleSession);
+router.get('/sessions', sessionsController.getSessions);
 
-router.post('/progress', workspaceController.submitProgressUpdate);
+// Progress
+router.post('/progress', progressController.submitProgressUpdate);
 
+// Flags
 router.get('/flags', flagsController.getUserFlags);
 router.post('/flag', flagsController.submitFlagDelay);
+router.delete('/flag/:flagId', flagsController.deleteFlag);
 
 module.exports = router;
